@@ -22,23 +22,23 @@ public class Repository {
     }
 
     /*Setters & Getters*/
-    public URL getUrl() {
-        return url;
+    public URL getOsvUrl() {
+        return osvUrl;
 
     }
 
-    public void setUrl(URL url) {
-        this.url = url;
+    public void setOsvUrl(URL osvUrl) {
+        this.osvUrl = osvUrl;
 
     }
 
-    public Path getPath() {
-        return path;
+    public Path getConfPath() {
+        return confPath;
 
     }
 
-    public void setPath(Path path) {
-        this.path = path;
+    public void setConfPath(Path confPath) {
+        this.confPath = confPath;
 
     }
 
