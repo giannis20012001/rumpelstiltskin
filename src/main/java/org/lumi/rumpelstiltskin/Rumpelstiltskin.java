@@ -9,7 +9,7 @@ public class Rumpelstiltskin {
 
     }
 
-    public  void buildOSVImage() {
+    public void buildOSVImage() {
         //
 
     }
