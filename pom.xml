@@ -32,7 +32,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>io.osv.Main</mainClass>
+                            <mainClass>org.lumi.rumpelstiltskin.RumpelstiltskinMain</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -52,7 +52,7 @@
                             </descriptorRefs>
                             <archive>
                                 <manifest>
-                                    <mainClass>io.osv.Main</mainClass>
+                                    <mainClass>org.lumi.rumpelstiltskin.RumpelstiltskinMain</mainClass>
                                 </manifest>
                             </archive>
                         </configuration>
