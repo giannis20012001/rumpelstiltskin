@@ -9,7 +9,7 @@ import java.nio.file.Path;
 public class Repository {
 
 
-    public Repository() {
+    public Repository(URL url, Path path) {
         //
 
     }
@@ -35,64 +35,8 @@ public class Repository {
 
     }
 
-    public String getFormatVersion() {
-        return formatVersion;
-
-    }
-
-    public void setFormatVersion(String formatVersion) {
-        this.formatVersion = formatVersion;
-
-    }
-
-    public String getVersion() {
-        return version;
-
-    }
-
-    public void setVersion(String version) {
-        this.version = version;
-
-    }
-
-    public String getCreated() {
-        return created;
-
-    }
-
-    public void setCreated(String created) {
-        this.created = created;
-
-    }
-
-    public String getDescription() {
-        return description;
-
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-
-    }
-
-    public String getBuild() {
-        return build;
-
-    }
-
-    public void setBuild(String build) {
-        this.build = build;
-
-    }
-
     /*Repository related variables*/
     private URL url;
     private Path path;
-    /*ImageInfo related variables*/
-    String formatVersion;
-    String version;
-    String created;
-    String description;
-    String build;
 
 }
