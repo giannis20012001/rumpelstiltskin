@@ -9,7 +9,7 @@ import java.util.List;
  * Created by John Tsantilis (A.K.A lumi) on 20/2/2016.
  */
 public class Repository {
-    public void createNewRepo() {
+    public void importImage(String imageName, String file, String version, String created, String description, String build) {
 
     }
 
