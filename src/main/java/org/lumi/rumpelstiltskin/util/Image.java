@@ -4,6 +4,17 @@ package org.lumi.rumpelstiltskin.util;
  * Created by John Tsantilis (A.K.A lumi) on 20/2/2016.
  */
 public class Image {
+
+    /*Constructor*/
+    public Image(String formatVersion, String version, String created, String description, String build) {
+        this.formatVersion = formatVersion;
+        this.version = version;
+        this.created = created;
+        this.description = description;
+        this.build = build;
+
+    }
+
     /*Setters & Getters*/
     public String getFormatVersion() {
         return formatVersion;
