@@ -6,71 +6,35 @@ package org.lumi.rumpelstiltskin.util;
 public class Image {
 
     /*Constructor*/
-    public Image(String formatVersion, String version, String created, String description, String build) {
-        this.formatVersion = formatVersion;
-        this.version = version;
-        this.created = created;
-        this.description = description;
-        this.build = build;
+    public Image(String name, String hypervisor) {
+        this.name = name;
+        this.hypervisor = hypervisor;
 
     }
 
     /*Setters & Getters*/
-    public String getFormatVersion() {
-        return formatVersion;
+    public String getName() {
+        return name;
 
     }
 
-    public void setFormatVersion(String formatVersion) {
-        this.formatVersion = formatVersion;
+    public void setName(String name) {
+        name = name;
 
     }
 
-    public String getVersion() {
-        return version;
+    public String getHypervisor() {
+        return hypervisor;
 
     }
 
-    public void setVersion(String version) {
-        this.version = version;
-
-    }
-
-    public String getCreated() {
-        return created;
-
-    }
-
-    public void setCreated(String created) {
-        this.created = created;
-
-    }
-
-    public String getDescription() {
-        return description;
-
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-
-    }
-
-    public String getBuild() {
-        return build;
-
-    }
-
-    public void setBuild(String build) {
-        this.build = build;
+    public void setHypervisor(String hypervisor) {
+        hypervisor = hypervisor;
 
     }
 
     /*ImageInfo related variables*/
-    private String formatVersion;
-    private String version;
-    private String created;
-    private String description;
-    private String build;
+    private String name;
+    private String hypervisor;
 
 }

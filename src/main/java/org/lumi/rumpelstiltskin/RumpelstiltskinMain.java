@@ -6,7 +6,8 @@ package org.lumi.rumpelstiltskin;
 
 public class RumpelstiltskinMain {
     public static void main(String[] args) {
-        //
+        Rumpelstiltskin yolo = new Rumpelstiltskin();
+        yolo.buildOSVImage("yolo");
 
     }
 
