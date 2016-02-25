@@ -110,9 +110,5 @@ public class Rumpelstiltskin {
     private static final String DEFAULT_REPOSITORY_PATH = DEFAULT_CONFIG_PATH+ "/repository";
     private static final String DEFAULT_IMAGES_PATH = DEFAULT_REPOSITORY_PATH + "/cloudius";
     private static final String DEFAULT_CAPSTAN_PATH = DEFAULT_HOME + "/bin";
-    //
-    private static final Path PATH_ROOT = Paths.get(File.separator);
-    private static final String CONF_FILE = "Capstanfile";
-    //
-    private String FINAL_IMAGE_BUILD_PATH;
+
 }
