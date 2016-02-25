@@ -18,8 +18,8 @@ import java.nio.file.Paths;
 public class Rumpelstiltskin {
     public void buildOSVImage(String pathToJar, String jarName) throws InterruptedException, IOException {
         final String newCapstanFile = generateCapstanfile(pathToJar, jarName);
-        File jarFile = new File(pathToJar + jarName + ".jar");
-        if(!jarFile.exists()) {
+        File capstanFile = new File(pathToJar + CONF_FILE);
+        if(!capstanFile.exists()) {
             dump(newCapstanFile, pathToJar);
 
         }
@@ -110,5 +110,7 @@ public class Rumpelstiltskin {
     private static final String DEFAULT_REPOSITORY_PATH = DEFAULT_CONFIG_PATH+ "/repository";
     private static final String DEFAULT_IMAGES_PATH = DEFAULT_REPOSITORY_PATH + "/cloudius";
     private static final String DEFAULT_CAPSTAN_PATH = DEFAULT_HOME + "/bin";
+    //
+    private static final String CONF_FILE = "Capstanfile";
 
 }
