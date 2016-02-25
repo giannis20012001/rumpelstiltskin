@@ -8,11 +8,15 @@ import java.io.File;
 public class Rumpelstiltskin {
     public void buildOSVImage(String imageName) {
         System.out.printf("%s %s...\n", "Building", imageName);
-        System.out.println("yolo");
 
     }
 
-    public void deployOSVImageLocally() {
+    public  void importOSVBaseImage() {
+        //
+
+    }
+
+    public void deployOSVImage() {
         //
 
     }
@@ -52,14 +56,16 @@ public class Rumpelstiltskin {
         createDirectory(DEFAULT_CONFIG_PATH);
         createDirectory(DEFAULT_REPOSITORY_PATH);
         createDirectory(DEFAULT_IMAGES_PATH);
+        createDirectory(DEFAULT_CAPSTAN_PATH);
 
     }
 
-    /*Default paths are hardcoded ( for ease reasons)*/
+    /*Default paths are hardcoded (for ease reasons)*/
     private static final String DEFAULT_HOME = System.getProperty("user.home");
     private static final String DEFAULT_CONFIG_PATH = DEFAULT_HOME + "/.capstan";
     private static final String DEFAULT_REPOSITORY_PATH = DEFAULT_CONFIG_PATH+ "/repository";
     private static final String DEFAULT_IMAGES_PATH = DEFAULT_REPOSITORY_PATH + "/cloudius";
+    private static final String DEFAULT_CAPSTAN_PATH = DEFAULT_HOME + "/bin";
     //
-    private String BUILD_IMAGE_PATH;
+    private String FINAL_IMAGE_BUILD_PATH;
 }
