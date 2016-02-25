@@ -17,10 +17,10 @@ import java.nio.file.Paths;
 
 public class Rumpelstiltskin {
     public void buildOSVImage(String pathToJar, String jarName) throws InterruptedException, IOException {
-        final String newCapstanFile = generateCapstanfile(pathToJar, jarName);
+        String newCapstanFile = generateCapstanfile(jarName);
         File capstanFile = new File(pathToJar + CONF_FILE);
         if(!capstanFile.exists()) {
-            dump(newCapstanFile, pathToJar);
+            dump(newCapstanFile, (pathToJar + CONF_FILE));
 
         }
 
@@ -44,12 +44,12 @@ public class Rumpelstiltskin {
 
     }
 
-    private String generateCapstanfile(String pathToJar, String jarName) throws IOException {
+    private String generateCapstanfile(String jarName) throws IOException {
         final StringBuilder sb = new StringBuilder();
         sb.append("base: ").append("cloudius/osv-openjdk8").append("\n\n");
-        sb.append("cmdline: ").append("/java.so -jar ").append("/").append(jarName + ".jar").append("\n\n");
+        sb.append("cmdline: ").append("/java.so -jar ").append("/").append(jarName).append("\n\n");
         sb.append("files:\n");
-        sb.append("  /").append(jarName + ".jar: ").append(pathToJar).append("\n");
+        sb.append("  /").append(jarName).append(": ").append("target/").append(jarName).append("\n");
 
         return sb.toString();
 
