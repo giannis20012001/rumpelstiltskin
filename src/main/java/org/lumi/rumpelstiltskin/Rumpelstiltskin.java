@@ -1,22 +1,56 @@
 package org.lumi.rumpelstiltskin;
 
+import org.lumi.rumpelstiltskin.util.RuntimeExec;
+
 import java.io.File;
+import java.io.IOException;
 
 /**
  * Created by John Tsantilis (A.K.A lumi) on 20/2/2016.
  */
+
 public class Rumpelstiltskin {
-    public void buildOSVImage(String imageName) {
-        System.out.printf("%s %s...\n", "Building", imageName);
+    public void buildOSVImage(String pathToJar) {
+        Runtime rt = Runtime.getRuntime();
+        RuntimeExec rte = new RuntimeExec();
+        RuntimeExec.StreamWrapper error, output;
+
+        try {
+            Process proc = rt.exec("capstan build -v springbootapp");// Enter capstan command
+            error = rte.getStreamWrapper(proc.getErrorStream(), "ERROR");
+            output = rte.getStreamWrapper(proc.getInputStream(), "OUTPUT");
+            int exitVal = 0;
+
+            error.start();
+            output.start();
+            error.join(3000);
+            output.join(3000);
+            exitVal = proc.waitFor();
+            System.out.println("Output: " + output.getMessage() + "\nError: " + error.getMessage());
+
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+
+        }
+        catch (InterruptedException e) {
+            e.printStackTrace();
+
+        }
 
     }
 
-    public  void importOSVBaseImage() {
+    public void importOSVBaseImage() {
         //
 
     }
 
     public void deployOSVImage() {
+        //
+
+    }
+
+    private void generateCapstanFile(String baseImageName, String cmdLine, String ListOfFiles) {
         //
 
     }
