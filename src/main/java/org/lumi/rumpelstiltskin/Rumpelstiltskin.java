@@ -38,7 +38,7 @@ public class Rumpelstiltskin {
 
     private String getCapstanfile(ProcessBuilder pb) throws IOException {
         final StringBuilder sb = new StringBuilder();
-        sb.append("base: ").append(getBaseImage()).append("\n\n");
+        sb.append("base: ").append("cloudius/osv-openjdk8").append("\n\n");
         sb.append("cmdline: ").append("/java.so -jar ").append("yolo").append("\n\n");
         sb.append("files:\n");
         sb.append("  yolo").append("\n");
@@ -47,10 +47,6 @@ public class Rumpelstiltskin {
 
     }
 
-    private String getBaseImage() {
-        return "cloudius/osv-openjdk8";
-
-    }
 
     private void createDirectory(String directoryName) {
         File theDir = new File(directoryName);
