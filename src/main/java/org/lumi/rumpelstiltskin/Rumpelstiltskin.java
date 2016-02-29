@@ -18,13 +18,13 @@ import java.nio.file.Paths;
 public class Rumpelstiltskin {
     public void buildOSVImage(String pathToJar, String jarName) throws InterruptedException, IOException {
         String newCapstanFile = generateCapstanfile(jarName);
-        File capstanFile = new File(pathToJar + CONF_FILE);
-        if(!capstanFile.exists()) {
-            dump(newCapstanFile, (pathToJar + CONF_FILE));
+        File Capstanfile = new File(pathToJar + CONF_FILE);
+        if(!Capstanfile.exists()) {
+            dump(newCapstanFile, pathToJar);
 
         }
 
-        ProcessBuilder pb = new ProcessBuilder("capstan", "build", "-v", jarName + ".jar");
+        ProcessBuilder pb = new ProcessBuilder("capstan", "build", "-v", jarName);
         pb.directory(new File(pathToJar));
         Process process = pb.start();
         IOThreadHandler outputHandler = new IOThreadHandler(process.getInputStream());
@@ -57,7 +57,7 @@ public class Rumpelstiltskin {
 
 
     private static void dump(String content, String loc) throws IOException {
-        Path path = Paths.get(loc);
+        Path path = Paths.get(loc + CONF_FILE);
         try (final PrintWriter out = new PrintWriter(new OutputStreamWriter(Files.newOutputStream(path), Charset.defaultCharset()))) {
             out.print(content);
 
@@ -111,6 +111,6 @@ public class Rumpelstiltskin {
     private static final String DEFAULT_IMAGES_PATH = DEFAULT_REPOSITORY_PATH + "/cloudius";
     private static final String DEFAULT_CAPSTAN_PATH = DEFAULT_HOME + "/bin";
     //
-    private static final String CONF_FILE = "Capstanfile";
+    private static final String CONF_FILE = "/Capstanfile";
 
 }
