@@ -10,7 +10,7 @@ public class RumpelstiltskinMain {
     public static void main(String[] args) throws IOException {
         Rumpelstiltskin yolo = new Rumpelstiltskin();
         try{
-            yolo.buildOSVImage("/home/lumi/IdeaProjects/springbootapp", "springbootapp.jar");
+            yolo.buildOSVImage("/home/lumi/IdeaProjects/springbootapp", "springbootapp");
 
         }
         catch (InterruptedException ie) {

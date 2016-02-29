@@ -24,7 +24,7 @@ public class Rumpelstiltskin {
 
         }
 
-        ProcessBuilder pb = new ProcessBuilder("capstan", "build", "-v", jarName);
+        ProcessBuilder pb = new ProcessBuilder("capstan", "build", "-v", jarName + ".jar");
         pb.directory(new File(pathToJar));
         Process process = pb.start();
         IOThreadHandler outputHandler = new IOThreadHandler(process.getInputStream());
@@ -47,9 +47,9 @@ public class Rumpelstiltskin {
     private String generateCapstanfile(String jarName) throws IOException {
         final StringBuilder sb = new StringBuilder();
         sb.append("base: ").append("cloudius/osv-openjdk8").append("\n\n");
-        sb.append("cmdline: ").append("/java.so -jar ").append("/").append(jarName).append("\n\n");
+        sb.append("cmdline: ").append("/java.so -jar ").append("/").append(jarName).append(".jar").append("\n\n");
         sb.append("files:\n");
-        sb.append("  /").append(jarName).append(": ").append("target/").append(jarName).append("\n");
+        sb.append("  /").append(jarName).append(".jar").append(": ").append("target/").append(jarName).append(".jar").append("\n");
 
         return sb.toString();
 
