@@ -19,10 +19,7 @@ public class Rumpelstiltskin {
     public void buildOSVImage(String pathToJar, String jarName) throws InterruptedException, IOException {
         String newCapstanFile = generateCapstanfile(jarName);
         File Capstanfile = new File(pathToJar + CONF_FILE);
-        if(!Capstanfile.exists()) {
-            dump(newCapstanFile, pathToJar);
-
-        }
+        dump(newCapstanFile, pathToJar);
 
         ProcessBuilder pb = new ProcessBuilder("capstan", "build", "-v", jarName);
         pb.directory(new File(pathToJar));
