@@ -46,7 +46,7 @@ public class Rumpelstiltskin {
         sb.append("base: ").append("cloudius/osv-openjdk8").append("\n\n");
         sb.append("cmdline: ").append("/java.so -jar ").append("/").append(jarName).append(".jar").append("\n\n");
         sb.append("files:\n");
-        sb.append("  /").append(jarName).append(".jar").append(": ").append("target/").append(jarName).append(".jar").append("\n");
+        sb.append("  /").append(jarName).append(".jar").append(": ").append("target/").append(jarName).append("-1.0-SNAPSHOT.jar").append("\n");
 
         return sb.toString();
 
